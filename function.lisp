@@ -38,23 +38,33 @@ nil
 ;; Exercise 1
 ;; Implement the function 'adder' below so that it adds 2 to each element in
 ;; the list, puts it in a new list and returns that list
-(defun adder (l) l)
+(defun adder (list)
+    (if (equal (car list) nil)
+        list
+        (cons (+(car list) 2) (adder(cdr list)))))    
 
 (write (adder (list 4 8 15 16 23 42))) ;; this should return (6 10 17 18 25 44)
 
 ;; Exercise 2
 ;; Implement the 'prodder' function below so that it multiplies each element
 ;; in the list by 3, puts it in a new list and returns that list
-(defun prodder (l) 0)
+(defun multi (list)
+    (if (equal (car list) nil)
+        list
+        (cons (*(car list) 3) (multi(cdr list))))) 
 
-(write (prodder (list 4 8 15 16 23 42)))
+
+(write (multi (list 4 8 15 16 23 42)))
 
 ;; Exercise 3
 ;; Implement the 'minusser' function below that subtracts 5 from
 ;; each element in the list, puts it in a new list and returns that list
-(defun minusser (l) 0)
+(defun minus (lambda (a) (+ a 3))) (list) 
+    (if (equal (car list) nil)
+        list
+        (cons (-(car list) 5) (minus(cdr list)))))
 
-(write (minusser (list 4 8 15 16 23 42)))
+(write (minus (list 4 8 15 16 23 42)))
 
 ;; Exercise 4
 ;; This must be possible to make simpler! Search your feelings. How could

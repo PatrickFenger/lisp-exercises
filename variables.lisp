@@ -23,6 +23,10 @@
 ;; Define a global variable 'a' with value 42
 ;; Note: This is impossible in true functional programming
 
+(setf a 42)
+
 ;; Exercise 2
 ;; Write a let-binding where you define two variables: a = 10 and b = 20
 ;; In the body of the let-binding you should print the sum of a and b
+
+(let ((a 20)(b 40))(print ( + a b)))
